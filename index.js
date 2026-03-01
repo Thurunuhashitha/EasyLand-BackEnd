@@ -22,6 +22,8 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 const landRoutes = require('./routes/landRoutes');
 app.use('/api/land', landRoutes);
 
+require("./utils/autoDelete");
+
 // Start server
 app.listen(port, () => {
   console.log(`Backend server listening on http://localhost:${port}`);
